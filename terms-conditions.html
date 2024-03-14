@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="assets/favicon.svg" type="ico">
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="javascript.js" defer></script>
+        <title>Terms and Conditions | Couché Official Website</title>    
+    </head>
+
+    <body>
+        <header>
+            <div class="bannerAds">
+                <span>Free shipping for online orders above RM100 (West Malaysia only). Spend min RM150 to receive mystery gift.</span>
+            </div>
+    
+            <div class="logo" id="bannerLogo"><a href="home.html"><h2>COUCHÉ</h2></a></div>
+    
+            <div class="hamburgerMenuIcon" onclick="toggleHamburgerMenu()"><img src="assets/icon/hamburger.svg"></div>
+    
+            <div class="flexbox hamburgerDropdownContent" id="hamburgerDropdown">
+                <button class="closeButton" onclick="toggleHamburgerMenu()">
+                    <img src="assets/icon/plus.svg" alt="Close">
+                </button>
+    
+                <div class="dropdown"><button class="dropbutton">SHOP</button>
+                    <div class="dropdownContent">
+                        <a href="shop-all.html">Premium Soy Wax Scented Candle</a>
+                        <a href="shop-all.html">Sale</a>
+                    </div>
+                </div>
+                <a class="dropdown" href="about-us.html"><button class="dropbutton">ABOUT</button></a>
+                <a class="dropdown" href="contact-us.html"><button class="dropbutton">CONTACT US</button></a>
+                <button class="closeButton" onclick="toggleHamburgerMenu()"><img src="assets/icon/plus.svg"></button>
+            </div>
+    
+            <div class="flexbox" id="headerRightBarContainer">
+                <div onclick="openSidebar('userbar')" class="sidebutton"><img class="rightMenuIcon" src="assets/icon/user.svg">ACCOUNT</div>
+                <div onclick="openSidebar('cartbar')" class="sidebutton"><img class="rightMenuIcon" src="assets/icon/bag.svg">CART</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="textContent">
+                <h2>Terms & Conditions</h2>
+                <p>
+                    Welcome to the Couché online store (the "Site"). 
+                    Please read the following Terms of Service carefully before using this Site or opening a Couché account ("Account") so that you are aware of your legal rights and obligations with respect to Couché Enterprise. 
+                    The "Services" we provide or make available include (a) the Site, (b) the services provided by the Site, and (c) all information, linked pages, features, data, text, images, photographs, graphics, music, sounds, video (including live streams), messages, tags, content, programming, software, application services (including, without limitation, any mobile application services) or other materials made available through the Site or its related services ("Content"). 
+                    Any new features added to or augmenting the Services are also subject to these Terms of Service. 
+                    These Terms of Service govern your use of Services provided by Couché.
+                </p>
+                
+                <br>
+
+                <h5>WHEN WILL "WE" COLLECT PERSONAL DATA?</h5>
+                <p>We will/may collect personal data about you:</p>
+                <ol>
+                    <li>when you register and/or use our Services or Site, or open an account with us;</li>
+                    <li>when you submit any form, including, but not limited to, application forms or other forms relating to any of our products and services, whether online or by way of a physical form;</li>
+                    <li>when you enter into any agreement or provide other documentation or information in respect of your interactions with us, or when you use our products and services;</li>
+                    <li>when you interact with us, such as via telephone calls (which may be recorded), letters, fax, face-to-face meetings, social media platforms and emails;</li>
+                    <li>when you use our electronic services, or interact with us via our application or use services on our website. This includes, without limitation, through cookies which we may deploy when you interact with our application or website;</li>
+                    <li>when you carry out transactions through our Services;</li>
+                    <li>when you provide us with feedback or complaints;</li>
+                    <li>when you register for a contest; or</li>
+                    <li>when you submit your personal data to us for any reason</li>
+                </ol>
+
+                <br>
+
+                <h5>WHAT PERSONAL DATA WILL BE COLLECTED?</h5>
+                <p>The personal data that we may collect includes but is not limited to:</p>
+                <ul>
+                    <li>name;</li>
+                    <li>email address;</li>
+                    <li>date of birth;</li>
+                    <li>billing address;</li>
+                    <li>bank account and payment information;</li>
+                    <li>telephone number;</li>
+                    <li>gender;</li>
+                    <li>any other information about the User when the User signs up to use our Services or website, and when the User uses the Services or website, as well as information related to how the User uses our Services or website; and</li>
+                    <li>aggregate data on content the User engages with.</li>
+                </ul>
+                <p>If you do not want us to collect the aforementioned information/personal data, you may opt out at any time by notifying us via email at <b><a href="mailto:support@couche.com">support@couche.com</a></b></p>
+                
+                <br>
+                
+                <h5>SETTING UP AN ACCOUNT</h5>
+                <p>
+                    In order to use certain functionalities of the Services, you will have to create a user account which requires you to submit certain personal data. 
+                    When you register and create an account, we require you to provide us with your name and email address as well as a user name that you select. 
+                    We also ask for certain information about yourself such as your telephone number, email address, shipping address, photo identification, bank account details, age, date of birth, gender and interests. 
+                    Upon activating an account, you will select a user name and password. 
+                    Your user name and password will be used so you can securely access and maintain your account.
+                </p>
+                
+                <br>
+
+                <p><em>Last updated: 22nd December 2023</em></p>
+            </div>
+
+            <!--Start of the sidebar-->
+            <div id="userbar" class="sidebar">
+                <button class="closeSidebarButton" onclick="closeSidebar('userbar'); return false;">
+                    <img src="assets/icon/plus.svg" alt="Close">
+                </button>
+                
+                <div id="userContent" class="sidebarContainer">
+                    <form id="loginForm" method="post" action="form.php" novalidate>
+                        <h2>Login</h2>
+                        <div class="formGroup">
+                            <input type="email" name="email" id="loginEmail" placeholder=" " required>
+                            <label for="loginEmail">Email</label>
+                            <span class="validationMessage" id="loginEmailValidationMessage"></span>
+                        </div>
+
+                        <div class="formGroup">
+                            <input type="password" name="password" id="loginPassword" placeholder=" " required>
+                            <label for="loginPassword">Password</label>
+                            <button type="button" id="toggleBtn1" class="buttonForForm" onclick="togglePassword('toggleBtn1')">Show</button>
+                            <span class="validationMessage" id="loginPasswordValidationMessage"></span>
+                        </div>
+                        
+                        <div>
+                            <button type="submit">Login</button>
+                        </div>
+
+                        <div>
+                            <span>Or sign in with</span>
+                            <div class="flexbox spaceBetween">
+                                <a href="#button" class="flexbox button"><img src="assets/icon/facebook.svg">&nbsp;&nbsp;Facebook</a>
+                                <a href="#button" class="flexbox button"><img src="assets/icon/google.svg">&nbsp;&nbsp;Google</a>
+                            </div>
+                        </div>
+
+                        <span>Forgot your password?</span>
+                        <button type="button" class="toggleButton" onclick="showForgottenPasswordForm()">Reset password</button>
+
+                        <span>Does not have an account?</span>
+                        <button type="button" class="toggleButton" onclick="toggleForm()">Switch to Sign Up</button>
+                    </form>
+
+                    <form id="signupForm" style="display: none;" method="post" action="form.php" novalidate>
+                        <h2>Sign Up</h2>
+                        <div class="formGroup">
+                            <input type="text" name="username" id="signupUsername" placeholder=" " required>
+                            <label for="signupUsername">Username</label>
+                            <span class="validationMessage" id="signupUsernameValidationMessage"></span>
+                        </div>
+
+                        <div class="formGroup">
+                            <input type="email" name="email" id="signupEmail" placeholder=" " required>
+                            <label for="signupEmail">Email</label>
+                            <span class="validationMessage" id="signupEmailValidationMessage"></span>
+                        </div>
+
+                        <div class="formGroup">
+                            <input type="password" id="signupPassword" name="password" placeholder=" " required>
+                            <label for="signupPassword">Password</label>
+                            <button id="toggleBtn2" class="buttonForForm" type="button" onclick="togglePassword('toggleBtn2')">Show</button>
+                            <span class="validationMessage" id="signupPasswordValidationMessage"></span>
+                        </div>
+
+                        <div class="formGroup">
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder=" " required>
+                            <label for="confirmPassword">Confirm Password</label>
+                            <button id="toggleBtn3" class="buttonForForm" type="button" onclick="togglePassword('toggleBtn3')">Show</button>
+                            <span class="validationMessage" id="signupConfirmPasswordValidationMessage"></span>
+                        </div>
+
+                        <button type="submit">Sign Up</button>
+                        <button type="button" class="toggleButton" onclick="toggleForm()">Switch to Login</button>
+
+                    </form>
+
+                    <form id="forgottenPasswordForm" style="display: none;" method="post" action="form.php" novalidate>
+                        <h2>Forgotten password?</h2>
+                        <p>Enter your email address and we will send you a link to reset your password.</p>
+
+                        <div class="formGroup">
+                            <input type="email" name="email" id="forgotEmail" placeholder=" " required>
+                            <label for="forgotEmail">Email</label>
+                            <span class="validationMessage" id="forgotEmailValidationMessage"></span>
+                        </div>
+
+                        <button type="submit">Reset password</button>
+
+                        <button type="button" type="button" onclick="showLoginForm()">Back</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="cartbar" class="sidebar">
+                <button class="closeSidebarButton" onclick="closeSidebar('cartbar'); return false;">
+                    <img src="assets/icon/plus.svg" alt="Close">
+                </button>
+                <div class="sidebarContainer">
+                    <h2>Cart</h2>
+                    <p>Your cart is currently empty</p>
+                    <button onclick="closeSidebar('cartbar'); return false;">Continue Shopping</button>
+                </div>
+            </div>
+        </main>
+
+        <div id="overlay" class="overlay"></div>
+
+        <footer>
+            <div class="flexbox centerAlign">
+                <form id="newsletterForm" class="flexItem newsletter footerForm" method="post" action="form.php" novalidate>
+                    <h2>Insider Newsletter</h2>
+                    <p>Sign up to our newsletter so we can welcome you to the Couché community and keep you posted on new launches, events, special offers and more.</p>
+                    <div class="formGroup">
+                        <input type="email" name="email" id="email" placeholder=" ">
+                        <label for="email">Email</label>
+                        <button class="buttonForForm" type="submit"><img src="assets/icon/arrow.svg"></button>
+                    </div>
+                </form>
+    
+                <form class="flexItem footerForm"> <!-- Just to ensure the consistency its not a form-->
+                    <h2>Need Help?</h2>
+                    <p>We are here to assist you</p>
+                    <a href="contact-us.html"><button type="button">Contact Us</button></a>
+                </form>
+            </div>
+            <div class="flexbox spaceBetween footerLinkContainer">
+                <div>
+                    <div class="logo"><a href="home.html"><h2>COUCHÉ</h2></a></div>
+                </div>
+                <div class="flexbox">
+                    <div class="footerLink">
+                        <ul>
+                            <li><h5>Couché</h5></li>
+                            <li><a href="shop-all.html">Shop with us</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="FAQs.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerLink">
+                        <ul>
+                            <li><h5>Follow us</h5></li>
+                            <li><a href="https://shopee.com.my/coucheofficial">Shopee</a></li>
+                            <li><a href="https://www.instagram.com/couche.official/">Instagram</a></li>
+                            <li><a href="https://www.xiaohongshu.com/user/profile/5d58d6a400000000010043c2?xhsshare=CopyLink&appuid=5d58d6a400000000010043c2&apptime=1651233307">Xiaohongshu</a></li>
+                            <li><a href="https://www.tiktok.com/@couche.official?_t=8d8701xpe82&_r=1">TikTok</a></li>
+                        </ul>
+                    </div>
+                    <div class="footerLink">
+                        <ul>
+                            <li><h5>Legal</h5></li>
+                            <li><a href="terms-conditions.html">Terms and conditions</a></li>
+                            <li><a href="privacy-policy.html">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="centerAlign">
+                <span>© 2023, <a href="home.html">Couché.</a> All rights reserved.</span>
+            </div>
+        </footer>
+    </body>
+</html>
