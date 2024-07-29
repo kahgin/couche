@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.svg" type="ico">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="javascript.js" defer></script>
+    <script src="contact.js" defer></script>
+    <title>Contact Us | Couché Official Website</title>
+</head>
+
+<body>
+    <header>
+        <div class="bannerAds">
+            <span>Free shipping for online orders above RM100 (West Malaysia only). Spend min RM150 to receive mystery gift.</span>
+        </div>
+
+        <div class="logo" id="bannerLogo"><a href="home.html"><h2>COUCHÉ</h2></a></div>
+
+        <div class="hamburgerMenuIcon" onclick="toggleHamburgerMenu()"><img src="assets/icon/hamburger.svg"></div>
+
+        <div class="flexbox hamburgerDropdownContent" id="hamburgerDropdown">
+            <button class="closeButton" onclick="toggleHamburgerMenu()">
+                <img src="assets/icon/plus.svg" alt="Close">
+            </button>
+
+            <div class="dropdown"><button class="dropbutton">SHOP</button>
+                <div class="dropdownContent">
+                    <a href="shop-all.html">Premium Soy Wax Scented Candle</a>
+                    <a href="shop-all.html">Sale</a>
+                </div>
+            </div>
+            <a class="dropdown" href="about-us.html"><button class="dropbutton">ABOUT</button></a>
+            <a class="dropdown" href="contact-us.html"><button class="dropbutton">CONTACT US</button></a>
+            <button class="closeButton" onclick="toggleHamburgerMenu()"><img src="assets/icon/plus.svg"></button>
+        </div>
+
+        <div class="flexbox" id="headerRightBarContainer">
+            <div onclick="openSidebar('userbar')" class="sidebutton"><img class="rightMenuIcon" src="assets/icon/user.svg">ACCOUNT</div>
+            <div onclick="openSidebar('cartbar')" class="sidebutton"><img class="rightMenuIcon" src="assets/icon/bag.svg">CART</div>
+        </div>
+    </header>
+
+    <main>
+        <form id="contactForm" method="post" action="form.php" novalidate>
+            <h2>Contact Us</h2>
+            <div>
+            <h4>Mail</h4>
+            <p><a href="mailto:hello@couche.com">hello@couche.com</a></p>
+            <h4>Phone</h4>
+            <p><a href="tel:0123456789">0123456789</a></p>
+            </div>
+
+            <div class="formGroup">
+                <input type="text" name="name" id="contactName" placeholder=" " required>
+                <label for="name">Name</label>
+                <span class="validationMessage" id="contactNameValidationMessage"></span>
+            </div>
+
+            <div class="formGroup">
+                <input type="email" name="email" id="contactEmail" placeholder=" " required>
+                <label for="email">Email</label>
+                <span class="validationMessage" id="contactEmailValidationMessage"></span>
+            </div>
+
+            <div class="formGroup">
+                <input type="tel" name="phone" id="contactPhone" placeholder=" " required>
+                <label for="phone">Phone Number</label>
+                <span class="validationMessage" id="contactPhoneValidationMessage"></span>
+            </div>
+
+            <div class="formGroup">
+                <select name="subject" id="subject" class="button" required>
+                    <option value="" disabled selected>Subject</option>
+                    <option value="General">General</option>
+                    <option value="Order Information">Order Information</option>
+                    <option value="Career">Career</option>
+                </select>
+                <span class="validationMessage" id="subjectValidationMessage"></span>
+            </div>
+
+            <div class="formGroup">
+                <input type="text" name="desc" id="contactDesc" placeholder=" " required maxlength="100">
+                <label for="desc">Description</label>
+                <span class="validationMessage" id="contactDescValidationMessage"></span>
+            </div>
+
+            <div class="formGroup">
+                <input type="file" name="attachment" id="fileInput" style="display:none;" onchange="handleFileSelect(event)">
+                <button class="flexbox button" type="button" id="fileInputButton" onclick="document.getElementById('fileInput').click();"><img src="assets/icon/paperclip.svg">Attachment</button>
+            </div>
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        
+        <!--Start of the sidebar-->
+        <div id="userbar" class="sidebar">
+            <button class="closeSidebarButton" onclick="closeSidebar('userbar'); return false;">
+                <img src="assets/icon/plus.svg" alt="Close">
+            </button>
+            
+            <div id="userContent" class="sidebarContainer">
+                <form id="loginForm" method="post" action="form.php" novalidate>
+                    <h2>Login</h2>
+                    <div class="formGroup">
+                        <input type="email" name="email" id="loginEmail" placeholder=" " required>
+                        <label for="loginEmail">Email</label>
+                        <span class="validationMessage" id="loginEmailValidationMessage"></span>
+                    </div>
+
+                    <div class="formGroup">
+                        <input type="password" name="password" id="loginPassword" placeholder=" " required>
+                        <label for="loginPassword">Password</label>
+                        <button type="button" id="toggleBtn1" class="buttonForForm" onclick="togglePassword('toggleBtn1')">Show</button>
+                        <span class="validationMessage" id="loginPasswordValidationMessage"></span>
+                    </div>
+                    
+                    <div>
+                        <button type="submit">Login</button>
+                    </div>
+
+                    <div>
+                        <span>Or sign in with</span>
+                        <div class="flexbox spaceBetween">
+                            <a href="#button" class="flexbox button"><img src="assets/icon/facebook.svg">&nbsp;&nbsp;Facebook</a>
+                            <a href="#button" class="flexbox button"><img src="assets/icon/google.svg">&nbsp;&nbsp;Google</a>
+                        </div>
+                    </div>
+
+                    <span>Forgot your password?</span>
+                    <button type="button" class="toggleButton" onclick="showForgottenPasswordForm()">Reset password</button>
+
+                    <span>Does not have an account?</span>
+                    <button type="button" class="toggleButton" onclick="toggleForm()">Switch to Sign Up</button>
+                </form>
+
+                <form id="signupForm" style="display: none;" method="post" action="form.php" novalidate>
+                    <h2>Sign Up</h2>
+                    <div class="formGroup">
+                        <input type="text" name="username" id="signupUsername" placeholder=" " required>
+                        <label for="signupUsername">Username</label>
+                        <span class="validationMessage" id="signupUsernameValidationMessage"></span>
+                    </div>
+
+                    <div class="formGroup">
+                        <input type="email" name="email" id="signupEmail" placeholder=" " required>
+                        <label for="signupEmail">Email</label>
+                        <span class="validationMessage" id="signupEmailValidationMessage"></span>
+                    </div>
+
+                    <div class="formGroup">
+                        <input type="password" id="signupPassword" name="password" placeholder=" " required>
+                        <label for="signupPassword">Password</label>
+                        <button id="toggleBtn2" class="buttonForForm" type="button" onclick="togglePassword('toggleBtn2')">Show</button>
+                        <span class="validationMessage" id="signupPasswordValidationMessage"></span>
+                    </div>
+
+                    <div class="formGroup">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder=" " required>
+                        <label for="confirmPassword">Confirm Password</label>
+                        <button id="toggleBtn3" class="buttonForForm" type="button" onclick="togglePassword('toggleBtn3')">Show</button>
+                        <span class="validationMessage" id="signupConfirmPasswordValidationMessage"></span>
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+                    <button type="button" class="toggleButton" onclick="toggleForm()">Switch to Login</button>
+
+                </form>
+
+                <form id="forgottenPasswordForm" style="display: none;" method="post" action="form.php" novalidate>
+                    <h2>Forgotten password?</h2>
+                    <p>Enter your email address and we will send you a link to reset your password.</p>
+
+                    <div class="formGroup">
+                        <input type="email" name="email" id="forgotEmail" placeholder=" " required>
+                        <label for="forgotEmail">Email</label>
+                        <span class="validationMessage" id="forgotEmailValidationMessage"></span>
+                    </div>
+
+                    <button type="submit">Reset password</button>
+
+                    <button type="button" type="button" onclick="showLoginForm()">Back</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="cartbar" class="sidebar">
+            <button class="closeSidebarButton" onclick="closeSidebar('cartbar'); return false;">
+                <img src="assets/icon/plus.svg" alt="Close">
+            </button>
+            <div class="sidebarContainer">
+                <h2>Cart</h2>
+                <p>Your cart is currently empty</p>
+                <button onclick="closeSidebar('cartbar'); return false;">Continue Shopping</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="overlay" class="overlay"></div>
+
+    <footer>
+        <div class="flexbox centerAlign">
+            <form id="newsletterForm" class="flexItem newsletter footerForm" method="post" action="form.php" novalidate>
+                <h2>Insider Newsletter</h2>
+                <p>Sign up to our newsletter so we can welcome you to the Couché community and keep you posted on new launches, events, special offers and more.</p>
+                <div class="formGroup">
+                    <input type="email" name="email" id="email" placeholder=" ">
+                    <label for="email">Email</label>
+                    <button class="buttonForForm" type="submit"><img src="assets/icon/arrow.svg"></button>
+                </div>
+            </form>
+
+            <form class="flexItem footerForm"> <!-- Just to ensure the consistency its not a form-->
+                <h2>Need Help?</h2>
+                <p>We are here to assist you</p>
+                <a href="contact-us.html"><button type="button">Contact Us</button></a>
+            </form>
+        </div>
+        <div class="flexbox spaceBetween footerLinkContainer">
+            <div>
+                <div class="logo"><a href="home.html"><h2>COUCHÉ</h2></a></div>
+            </div>
+            <div class="flexbox">
+                <div class="footerLink">
+                    <ul>
+                        <li><h5>Couché</h5></li>
+                        <li><a href="shop-all.html">Shop with us</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="FAQs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footerLink">
+                    <ul>
+                        <li><h5>Follow us</h5></li>
+                        <li><a href="https://shopee.com.my/coucheofficial">Shopee</a></li>
+                        <li><a href="https://www.instagram.com/couche.official/">Instagram</a></li>
+                        <li><a href="https://www.xiaohongshu.com/user/profile/5d58d6a400000000010043c2?xhsshare=CopyLink&appuid=5d58d6a400000000010043c2&apptime=1651233307">Xiaohongshu</a></li>
+                        <li><a href="https://www.tiktok.com/@couche.official?_t=8d8701xpe82&_r=1">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footerLink">
+                    <ul>
+                        <li><h5>Legal</h5></li>
+                        <li><a href="terms-conditions.html">Terms and conditions</a></li>
+                        <li><a href="privacy-policy.html">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="centerAlign">
+            <span>© 2023, <a href="home.html">Couché.</a> All rights reserved.</span>
+        </div>
+    </footer>
+
+</body>
+</html>

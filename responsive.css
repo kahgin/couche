@@ -1,0 +1,97 @@
+@media (max-width: 768px) {
+    body,a,button,select {
+        font-size: 12px !important;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .flexbox {
+        display: none;
+    }
+    #hamburgerDropdown {
+        flex-direction: column;
+        position: absolute;
+    }
+    .hamburgerDropdownContent {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-color: white;
+        z-index: 5;
+    }
+    #hamburgerDropdown button {
+        display: none;
+    }
+    .hamburgerDropdownContent.is-active {
+        display: flex;
+    }
+    .closeButton {
+        border: none;
+        display: inline;
+        text-align: right;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    .hamburgerMenuIcon, .rightMenuIcon {
+        order: 0;
+        display: inline !important;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .sidebutton:hover {
+        border-bottom: none !important;
+    }
+    .sidebutton:active {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .hamburgerMenuIcon img {
+        padding-left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+    .sidebutton {
+        font-size: 0;
+    }
+    #headerRightBarContainer {
+        order: 2;
+        padding-right: 10px;
+    }
+    .navigationContainer {
+        bottom: 10px;
+    }
+    .bannerText {
+        text-wrap: wrap;
+        font-size: 0.8em;
+    }
+    header {
+        align-items: center;
+    }
+    header .dropbutton, header .sidebutton {
+        padding: 0 5px;
+        align-self: center;
+    }
+    #hamburgerDropdown .dropdown:hover {
+        background-color: #e6e6e6;
+    }
+    .dropbutton:hover {
+        border: 0;
+    }
+    .logo {
+        order: 1;
+        text-align: center;
+        padding: 0;
+        align-self: center;
+    }
+    div.footerLink {
+        padding: 0 10px;
+    }
+    label {
+        transform: translateY(-70%);
+    }
+    .buttonForForm {
+        width: 30px !important;
+    }
+}
